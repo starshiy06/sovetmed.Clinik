@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "sovetmedClinik", "http://localhost:52094", "{4124ED5A-CE58-B829-E5B7-2370ED05BE8F}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52094"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Documents\My Web Sites\sovetmedClinik\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52094\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52094"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\Documents\My Web Sites\sovetmedClinik\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52094\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\Documents\My Web Sites\sovetmedClinik\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4124ED5A-CE58-B829-E5B7-2370ED05BE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4124ED5A-CE58-B829-E5B7-2370ED05BE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AF508BB-8A84-490E-B8DA-192BFFF8984D}
+	EndGlobalSection
+EndGlobal
