@@ -6,8 +6,86 @@
     <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-    <h1>Драсте</h1>
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <style>
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                color: black; /* Чёрный цвет слова */
+                text-decoration: none; /* Убираем подчёркивание */
+                user-select: none; /* Запрет выделения текста */
+            }
 
-    <script src="js/JavaScript.js"></script>
+                /* Убираем синий фон при выделении (в некоторых браузерах) */
+                .tooltip::selection {
+                    background: transparent;
+                }
+
+            .tooltip-text {
+                visibility: hidden;
+                width: max-content;
+                max-width: 200px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 5px;
+                padding: 8px 12px;
+                position: absolute;
+                z-index: 1;
+                top: 125%; /* Позиция тултипа ниже слова */
+                left: 60%; /* Сдвиг вправо относительно слова */
+                transform: translateX(0); /* Убираем центрирование */
+                opacity: 0;
+                transition: opacity 0.3s;
+                pointer-events: none;
+                font-size: 18px;
+                line-height: 1.3;
+                white-space: nowrap; /* Чтобы текст не переносился */
+            }
+
+            .tooltip:hover .tooltip-text {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .tooltip-text::after {
+                content: "";
+                position: absolute;
+                top: -5px; /* Треугольник сверху тултипа */
+                left: 15px; /* Сдвиг треугольника вправо */
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent black transparent;
+            }
+        </style>
+    </head>
+    <body>
+
+        <span class="tooltip">
+            Слово
+            <span class="tooltip-text">Это всплывающий текст ниже слова</span>
+        </span>
+
+    </body>
+</html>
+
+
+<body>
+
+    <span class="tooltip">
+        Слово
+        <span class="tooltip-text">Это всплывающий текст с увеличенным размером</span>
+    </span>
+
+</body>
+</html>
+
+
+
+<script src="js/JavaScript.js"></script>
 </body>
 </html>
