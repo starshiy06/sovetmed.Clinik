@@ -112,11 +112,15 @@
         section {
             padding: 70px 40px;
             min-height: 300px;
+            position: relative;
         }
 
             section h2 {
                 font-size: 32px;
                 margin-bottom: 20px;
+                position: absolute;
+                top: 30px;
+                left: 40px;
             }
 
             section p {
@@ -129,6 +133,7 @@
 
         #doctors {
             background-color: #fff8e1;
+            padding-top: 120px;
         }
 
         #promotions {
@@ -139,131 +144,124 @@
             background-color: #e8f5e9;
         }
 
-        /* Новые стили для секции Врачи */
-        .specialties-container {
+        /* Обновленные стили для карусели */
+        .doctors-carousel {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 70px; /* Добавляем отступы для стрелок */
+        }
+
+        .specialty-title {
+            font-size: 28px;
+            color: #00a1d8;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            height: 40px;
+            transition: opacity 0.3s;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-track {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .doctor-slide {
+            min-width: 100%;
+            display: flex;
             justify-content: center;
         }
 
-        .specialty-card {
+        .doctor-card {
+            width: 600px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 300px;
-            padding: 20px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-            .specialty-card:hover {
-                transform: translateY(-5px);
-            }
-
-        .specialty-title {
-            font-size: 22px;
-            color: #00a1d8;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .doctor-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .doctor-item {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-            .doctor-item:last-child {
-                border-bottom: none;
-            }
-
-        .doctor-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-
-        .doctor-name {
-            font-weight: bold;
-        }
-
-        /* Модальное окно */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-
-        .modal-content {
-            background: white;
-            margin: 5% auto;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             padding: 30px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 28px;
-            font-weight: bold;
-            color: #aaa;
-            cursor: pointer;
-        }
-
-        .doctor-details {
             display: flex;
             gap: 30px;
-            align-items: center;
         }
 
         .doctor-photo {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 300px;
             border-radius: 10px;
             object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .doctor-info {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .doctor-fullname {
-            font-size: 24px;
+            font-size: 28px;
             color: #00a1d8;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
 
         .doctor-specialty {
+            font-size: 22px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         .doctor-experience {
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #555;
         }
 
         .doctor-bio {
             line-height: 1.6;
+            font-size: 18px;
+            color: #444;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: #00a1d8;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+            .carousel-button:hover {
+                background-color: #0085b5;
+                transform: translateY(-50%) scale(1.1);
+            }
+
+        .carousel-prev {
+            left: 0;
+        }
+
+        .carousel-next {
+            right: 0;
         }
     </style>
 </head>
@@ -310,182 +308,243 @@
     </section>
 
     <section id="doctors">
-        <h2>Наши специалисты</h2>
-        <div class="specialties-container">
-            <!-- Гастроэнтеролог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Гастроэнтеролог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor1')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Иванова М.А.</span>
-                    </li>
-                </ul>
-            </div>
+        <h2>Врачи</h2>
 
-            <!-- Гинеколог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Гинеколог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor2')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Петрова Е.В.</span>
-                    </li>
-                </ul>
-            </div>
+        <div class="doctors-carousel">
+            <div class="specialty-title" id="current-specialty">Гастроэнтеролог</div>
 
-            <!-- Дерматолог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Дерматолог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor3')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Сидоров А.П.</span>
-                    </li>
-                </ul>
-            </div>
+            <div class="carousel-container">
+                <button class="carousel-button carousel-prev" onclick="moveSlide(-1)">❮</button>
 
-            <!-- Кардиолог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Кардиолог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor4')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Кузнецова О.И.</span>
-                    </li>
-                </ul>
-            </div>
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Гастроэнтеролог 1 -->
+                    <div class="doctor-slide" data-specialty="Гастроэнтеролог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Гастроэнтеролог</div>
+                                <div class="doctor-experience">Стаж работы: 12 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике и лечении заболеваний ЖКТ.
+                                    Проводит гастроскопию, колоноскопию, УЗИ органов брюшной полости.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- КТГ -->
-            <div class="specialty-card">
-                <div class="specialty-title">КТГ</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor5')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Смирнов Д.В.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Гастроэнтеролог 2 -->
+                    <div class="doctor-slide" data-specialty="Гастроэнтеролог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Гастроэнтеролог</div>
+                                <div class="doctor-experience">Стаж работы: 8 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на эндоскопической диагностике заболеваний ЖКТ.
+                                    Владеет современными методами лечения язвенной болезни.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- ЛОР -->
-            <div class="specialty-card">
-                <div class="specialty-title">ЛОР</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor6')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Фролова Л.М.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Гинеколог 1 -->
+                    <div class="doctor-slide" data-specialty="Гинеколог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Гинеколог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении гормональных нарушений,
+                                    ведении беременности. Проводит УЗИ в гинекологии.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Невролог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Невролог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor7')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Громов П.С.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Гинеколог 2 -->
+                    <div class="doctor-slide" data-specialty="Гинеколог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Гинеколог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на ведении беременности, лечении
+                                    воспалительных заболеваний, контрацепции.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Онколог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Онколог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor8')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Белова А.К.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Дерматолог 1 -->
+                    <div class="doctor-slide" data-specialty="Дерматолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Дерматолог</div>
+                                <div class="doctor-experience">Стаж работы: 9 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении кожных заболеваний,
+                                    проводит дерматоскопию, удаление новообразований.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Офтальмолог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Офтальмолог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor9')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Зайцев В.Г.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Дерматолог 2 -->
+                    <div class="doctor-slide" data-specialty="Дерматолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Дерматолог</div>
+                                <div class="doctor-experience">Стаж работы: 7 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении акне, псориаза,
+                                    экземы и других кожных заболеваний.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Педиатр -->
-            <div class="specialty-card">
-                <div class="specialty-title">Педиатр</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor10')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Ковалева Т.И.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Кардиолог 1 -->
+                    <div class="doctor-slide" data-specialty="Кардиолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Кардиолог</div>
+                                <div class="doctor-experience">Стаж работы: 14 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении сердечно-сосудистых заболеваний,
+                                    проводит ЭКГ, ЭхоКГ, холтеровское мониторирование.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Терапевт -->
-            <div class="specialty-card">
-                <div class="specialty-title">Терапевт</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor11')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Николаев С.П.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- Кардиолог 2 -->
+                    <div class="doctor-slide" data-specialty="Кардиолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Кардиолог</div>
+                                <div class="doctor-experience">Стаж работы: 11 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении аритмий, ишемической
+                                    болезни сердца, гипертонической болезни.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Травматолог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Травматолог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor12')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Орлов М.Д.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- КТГ 1 -->
+                    <div class="doctor-slide" data-specialty="КТГ">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Врач КТГ</div>
+                                <div class="doctor-experience">Стаж работы: 8 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на проведении кардиотокографии
+                                    плода, интерпретации результатов КТГ.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- УЗИ -->
-            <div class="specialty-card">
-                <div class="specialty-title">УЗИ</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor13')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Попова Е.А.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- КТГ 2 -->
+                    <div class="doctor-slide" data-specialty="КТГ">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Врач КТГ</div>
+                                <div class="doctor-experience">Стаж работы: 6 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на проведении кардиотокографии
+                                    плода, интерпретации результатов КТГ.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Уролог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Уролог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor14')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Волков А.Б.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- ЛОР 1 -->
+                    <div class="doctor-slide" data-specialty="ЛОР">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">ЛОР</div>
+                                <div class="doctor-experience">Стаж работы: 12 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике и лечении заболеваний уха,
+                                    горла и носа. Проводит эндоскопические исследования.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Хирург -->
-            <div class="specialty-card">
-                <div class="specialty-title">Хирург</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor15')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Лебедев К.Р.</span>
-                    </li>
-                </ul>
-            </div>
+                    <!-- ЛОР 2 -->
+                    <div class="doctor-slide" data-specialty="ЛОР">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">ЛОР</div>
+                                <div class="doctor-experience">Стаж работы: 9 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении хронических заболеваний
+                                    ЛОР-органов, проводит малоинвазивные операции.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Эндокринолог -->
-            <div class="specialty-card">
-                <div class="specialty-title">Эндокринолог</div>
-                <ul class="doctor-list">
-                    <li class="doctor-item" onclick="openDoctorModal('doctor16')">
-                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
-                        <span class="doctor-name">Соколова Н.В.</span>
-                    </li>
-                </ul>
+                    <!-- Невролог 1 -->
+                    <div class="doctor-slide" data-specialty="Невролог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Невролог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении заболеваний нервной системы,
+                                    проводит электронейромиографию, УЗДГ сосудов.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Невролог 2 -->
+                    <div class="doctor-slide" data-specialty="Невролог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Невролог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на лечении головных болей,
+                                    вегетативных расстройств, последствий инсультов.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Остальные врачи (по аналогии) -->
+                </div>
+
+                <button class="carousel-button carousel-next" onclick="moveSlide(1)">❯</button>
             </div>
         </div>
     </section>
@@ -499,82 +558,6 @@
         <h2>Контакты</h2>
         <p>Контактная информация и форма обратной связи.</p>
     </section>
-
-    <!-- Модальные окна врачей -->
-    <div id="doctor1Modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="doctor-details">
-                <img src="https://via.placeholder.com/200" alt="Иванова М.А." class="doctor-photo">
-                <div class="doctor-info">
-                    <h3 class="doctor-fullname">Иванова Мария Александровна</h3>
-                    <div class="doctor-specialty">Гастроэнтеролог, высшая категория</div>
-                    <div class="doctor-experience">Стаж работы: 12 лет</div>
-                    <div class="doctor-bio">
-                        Специализируется на диагностике и лечении заболеваний ЖКТ.
-                        Проводит гастроскопию, колоноскопию, УЗИ органов брюшной полости.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="doctor2Modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="doctor-details">
-                <img src="https://via.placeholder.com/200" alt="Петрова Е.В." class="doctor-photo">
-                <div class="doctor-info">
-                    <h3 class="doctor-fullname">Петрова Елена Владимировна</h3>
-                    <div class="doctor-specialty">Гинеколог-эндокринолог</div>
-                    <div class="doctor-experience">Стаж работы: 9 лет</div>
-                    <div class="doctor-bio">
-                        Специализируется на лечении гормональных нарушений, ведении беременности.
-                        Проводит УЗИ в гинекологии, кольпоскопию.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="doctor3Modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="doctor-details">
-                <img src="https://via.placeholder.com/200" alt="Сидоров А.П." class="doctor-photo">
-                <div class="doctor-info">
-                    <h3 class="doctor-fullname">Сидоров Алексей Петрович</h3>
-                    <div class="doctor-specialty">Дерматолог-косметолог</div>
-                    <div class="doctor-experience">Стаж работы: 7 лет</div>
-                    <div class="doctor-bio">
-                        Специализируется на лечении кожных заболеваний, проводит дерматоскопию,
-                        удаление новообразований, косметологические процедуры.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Остальные модальные окна (doctor4Modal - doctor16Modal) -->
-    <!-- Для краткости показаны не все, но структура аналогична -->
-
-    <div id="doctor16Modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <div class="doctor-details">
-                <img src="https://via.placeholder.com/200" alt="Соколова Н.В." class="doctor-photo">
-                <div class="doctor-info">
-                    <h3 class="doctor-fullname">Соколова Наталья Владимировна</h3>
-                    <div class="doctor-specialty">Эндокринолог, диетолог</div>
-                    <div class="doctor-experience">Стаж работы: 11 лет</div>
-                    <div class="doctor-bio">
-                        Специализируется на лечении сахарного диабета, заболеваний щитовидной железы.
-                        Проводит коррекцию веса, гормональные исследования.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Функция для плавной прокрутки к секциям
@@ -590,24 +573,39 @@
             alert('Функция записи на прием будет реализована позже');
         });
 
-        // Функции для работы модальных окон врачей
-        function openDoctorModal(doctorId) {
-            document.getElementById(doctorId + 'Modal').style.display = 'block';
+        // Логика карусели врачей
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.doctor-slide');
+        const track = document.getElementById('carousel-track');
+        const specialtyTitle = document.getElementById('current-specialty');
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+
+        function updateCarousel() {
+            // Обновляем позицию карусели
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Обновляем название специальности
+            if (slides[currentSlide]) {
+                specialtyTitle.textContent = slides[currentSlide].dataset.specialty;
+            }
+
+            // Обновляем состояние кнопок
+            prevButton.style.display = currentSlide === 0 ? 'none' : 'flex';
+            nextButton.style.display = currentSlide === slides.length - 1 ? 'none' : 'flex';
         }
 
-        function closeModal() {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                modal.style.display = 'none';
-            });
-        }
+        function moveSlide(direction) {
+            const newSlide = currentSlide + direction;
 
-        // Закрытие при клике вне окна
-        window.onclick = function(event) {
-            if (event.target.className === 'modal') {
-                closeModal();
+            if (newSlide >= 0 && newSlide < slides.length) {
+                currentSlide = newSlide;
+                updateCarousel();
             }
         }
+
+        // Инициализация карусели
+        updateCarousel();
     </script>
 </body>
 </html>
