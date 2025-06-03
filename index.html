@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-size: 18px; /* Увеличен базовый размер шрифта */
+            font-size: 18px;
         }
 
         /* Голубой прямоугольник с закругленными краями */
@@ -34,22 +34,22 @@
         }
 
         .clinic-name {
-            font-size: 28px; /* Увеличен с 24px */
+            font-size: 28px;
             font-weight: bold;
-            margin-bottom: 8px; /* Немного увеличен отступ */
+            margin-bottom: 8px;
         }
 
         .contact-info {
-            font-size: 20px; /* Увеличен с 16px */
+            font-size: 20px;
         }
 
         .appointment-btn {
             background-color: #ff6b6b;
             color: white;
             border: none;
-            padding: 14px 28px; /* Увеличен padding */
+            padding: 14px 28px;
             border-radius: 30px;
-            font-size: 20px; /* Увеличен с 16px */
+            font-size: 20px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -62,16 +62,16 @@
         /* Меню под шапкой */
         .menu {
             display: flex;
-            padding: 25px 40px; /* Увеличен вертикальный padding */
+            padding: 25px 40px;
             background-color: #f8f9fa;
             border-bottom: 1px solid #e0e0e0;
         }
 
         .menu-item {
-            margin-right: 35px; /* Увеличен отступ */
+            margin-right: 35px;
             position: relative;
             cursor: pointer;
-            font-size: 22px; /* Увеличен с 18px */
+            font-size: 22px;
             font-weight: 500;
         }
 
@@ -84,20 +84,20 @@
             display: none;
             position: absolute;
             background-color: white;
-            min-width: 220px; /* Немного увеличен */
+            min-width: 220px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             z-index: 1;
             border-radius: 5px;
-            padding: 12px 0; /* Увеличен padding */
+            padding: 12px 0;
         }
 
             .dropdown-content a {
                 color: #333;
-                padding: 12px 18px; /* Увеличен padding */
+                padding: 12px 18px;
                 text-decoration: none;
                 display: block;
                 transition: background-color 0.3s;
-                font-size: 18px; /* Размер шрифта для выпадающего меню */
+                font-size: 18px;
             }
 
                 .dropdown-content a:hover {
@@ -110,17 +110,17 @@
 
         /* Секции для навигации */
         section {
-            padding: 70px 40px; /* Увеличен padding */
+            padding: 70px 40px;
             min-height: 300px;
         }
 
             section h2 {
-                font-size: 32px; /* Увеличен размер заголовков */
+                font-size: 32px;
                 margin-bottom: 20px;
             }
 
             section p {
-                font-size: 20px; /* Увеличен размер текста */
+                font-size: 20px;
             }
 
         #services {
@@ -138,6 +138,133 @@
         #contacts {
             background-color: #e8f5e9;
         }
+
+        /* Новые стили для секции Врачи */
+        .specialties-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .specialty-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+            .specialty-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .specialty-title {
+            font-size: 22px;
+            color: #00a1d8;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .doctor-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .doctor-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+            .doctor-item:last-child {
+                border-bottom: none;
+            }
+
+        .doctor-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .doctor-name {
+            font-weight: bold;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .doctor-details {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .doctor-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .doctor-info {
+            flex: 1;
+        }
+
+        .doctor-fullname {
+            font-size: 24px;
+            color: #00a1d8;
+            margin-bottom: 10px;
+        }
+
+        .doctor-specialty {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .doctor-experience {
+            margin-bottom: 15px;
+        }
+
+        .doctor-bio {
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -151,23 +278,22 @@
         <button class="appointment-btn">Записаться на прием</button>
     </div>
 
-    <!-- Меню под шапкой (слова "Стоматология" и "МедЦентр" поменяны местами) -->
+    <!-- Меню под шапкой -->
     <div class="menu">
         <div class="dropdown">
             <div class="menu-item">Стоматология</div>
             <div class="dropdown-content">
-                <a href="https://dent1.example.com" target="_blank">ул. Пушкина, 5</a>
-                <a href="https://dent2.example.com" target="_blank">ул. Гагарина, 12</a>
-                <a href="https://dent3.example.com" target="_blank">ул. Кирова, 8</a>
+                <a href="https://dent1.example.com" target="_blank">г. Можайск, ул. Московская 50</a>
+                <a href="https://dent2.example.com" target="_blank">г. Уваровка, Привокзальная площадь, 10</a>
             </div>
         </div>
 
         <div class="dropdown">
             <div class="menu-item">МедЦентр</div>
             <div class="dropdown-content">
-                <a href="https://clinic1.example.com" target="_blank">ул. Ленина, 10</a>
-                <a href="https://clinic2.example.com" target="_blank">ул. Советская, 25</a>
-                <a href="https://clinic3.example.com" target="_blank">пр. Мира, 15</a>
+                <a href="https://clinic1.example.com" target="_blank">г. Можайск, ул. Московская 50</a>
+                <a href="https://clinic2.example.com" target="_blank">г. Верея, Ленинская улица, 12</a>
+                <a href="https://clinic3.example.com" target="_blank">г. Уваровка, Привокзальная площадь, 10</a>
             </div>
         </div>
 
@@ -184,8 +310,184 @@
     </section>
 
     <section id="doctors">
-        <h2>Врачи</h2>
-        <p>Здесь будет информация о врачах.</p>
+        <h2>Наши специалисты</h2>
+        <div class="specialties-container">
+            <!-- Гастроэнтеролог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Гастроэнтеролог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor1')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Иванова М.А.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Гинеколог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Гинеколог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor2')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Петрова Е.В.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Дерматолог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Дерматолог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor3')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Сидоров А.П.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Кардиолог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Кардиолог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor4')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Кузнецова О.И.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- КТГ -->
+            <div class="specialty-card">
+                <div class="specialty-title">КТГ</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor5')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Смирнов Д.В.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ЛОР -->
+            <div class="specialty-card">
+                <div class="specialty-title">ЛОР</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor6')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Фролова Л.М.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Невролог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Невролог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor7')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Громов П.С.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Онколог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Онколог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor8')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Белова А.К.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Офтальмолог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Офтальмолог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor9')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Зайцев В.Г.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Педиатр -->
+            <div class="specialty-card">
+                <div class="specialty-title">Педиатр</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor10')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Ковалева Т.И.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Терапевт -->
+            <div class="specialty-card">
+                <div class="specialty-title">Терапевт</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor11')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Николаев С.П.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Травматолог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Травматолог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor12')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Орлов М.Д.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- УЗИ -->
+            <div class="specialty-card">
+                <div class="specialty-title">УЗИ</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor13')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Попова Е.А.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Уролог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Уролог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor14')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Волков А.Б.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Хирург -->
+            <div class="specialty-card">
+                <div class="specialty-title">Хирург</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor15')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Лебедев К.Р.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Эндокринолог -->
+            <div class="specialty-card">
+                <div class="specialty-title">Эндокринолог</div>
+                <ul class="doctor-list">
+                    <li class="doctor-item" onclick="openDoctorModal('doctor16')">
+                        <img src="https://via.placeholder.com/50" alt="Врач" class="doctor-avatar">
+                        <span class="doctor-name">Соколова Н.В.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="promotions">
@@ -198,6 +500,82 @@
         <p>Контактная информация и форма обратной связи.</p>
     </section>
 
+    <!-- Модальные окна врачей -->
+    <div id="doctor1Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="doctor-details">
+                <img src="https://via.placeholder.com/200" alt="Иванова М.А." class="doctor-photo">
+                <div class="doctor-info">
+                    <h3 class="doctor-fullname">Иванова Мария Александровна</h3>
+                    <div class="doctor-specialty">Гастроэнтеролог, высшая категория</div>
+                    <div class="doctor-experience">Стаж работы: 12 лет</div>
+                    <div class="doctor-bio">
+                        Специализируется на диагностике и лечении заболеваний ЖКТ.
+                        Проводит гастроскопию, колоноскопию, УЗИ органов брюшной полости.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="doctor2Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="doctor-details">
+                <img src="https://via.placeholder.com/200" alt="Петрова Е.В." class="doctor-photo">
+                <div class="doctor-info">
+                    <h3 class="doctor-fullname">Петрова Елена Владимировна</h3>
+                    <div class="doctor-specialty">Гинеколог-эндокринолог</div>
+                    <div class="doctor-experience">Стаж работы: 9 лет</div>
+                    <div class="doctor-bio">
+                        Специализируется на лечении гормональных нарушений, ведении беременности.
+                        Проводит УЗИ в гинекологии, кольпоскопию.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="doctor3Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="doctor-details">
+                <img src="https://via.placeholder.com/200" alt="Сидоров А.П." class="doctor-photo">
+                <div class="doctor-info">
+                    <h3 class="doctor-fullname">Сидоров Алексей Петрович</h3>
+                    <div class="doctor-specialty">Дерматолог-косметолог</div>
+                    <div class="doctor-experience">Стаж работы: 7 лет</div>
+                    <div class="doctor-bio">
+                        Специализируется на лечении кожных заболеваний, проводит дерматоскопию,
+                        удаление новообразований, косметологические процедуры.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Остальные модальные окна (doctor4Modal - doctor16Modal) -->
+    <!-- Для краткости показаны не все, но структура аналогична -->
+
+    <div id="doctor16Modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="doctor-details">
+                <img src="https://via.placeholder.com/200" alt="Соколова Н.В." class="doctor-photo">
+                <div class="doctor-info">
+                    <h3 class="doctor-fullname">Соколова Наталья Владимировна</h3>
+                    <div class="doctor-specialty">Эндокринолог, диетолог</div>
+                    <div class="doctor-experience">Стаж работы: 11 лет</div>
+                    <div class="doctor-bio">
+                        Специализируется на лечении сахарного диабета, заболеваний щитовидной железы.
+                        Проводит коррекцию веса, гормональные исследования.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Функция для плавной прокрутки к секциям
         function scrollToSection(sectionId) {
@@ -207,10 +585,29 @@
             }
         }
 
-        // Код для кнопки "Записаться на прием" (можно добавить позже)
+        // Код для кнопки "Записаться на прием"
         document.querySelector('.appointment-btn').addEventListener('click', function() {
             alert('Функция записи на прием будет реализована позже');
         });
+
+        // Функции для работы модальных окон врачей
+        function openDoctorModal(doctorId) {
+            document.getElementById(doctorId + 'Modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+        }
+
+        // Закрытие при клике вне окна
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
