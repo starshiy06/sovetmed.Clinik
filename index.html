@@ -154,7 +154,7 @@
         }
 
         .specialty-title {
-            font-size: 28px;
+            font-size: 40px;
             color: #00a1d8;
             text-align: center;
             margin-bottom: 30px;
@@ -311,16 +311,21 @@
         <h2>Врачи</h2>
 
         <div class="doctors-carousel">
-            <div class="specialty-title" id="current-specialty">Гастроэнтеролог</div>
+            <div class="specialty-title" id="current-specialty"> наш Гастроэнтеролог</div>
 
             <div class="carousel-container">
                 <button class="carousel-button carousel-prev" onclick="moveSlide(-1)">❮</button>
 
                 <div class="carousel-track" id="carousel-track">
                     <!-- Гастроэнтеролог 1 -->
-                    <div class="doctor-slide" data-specialty="Гастроэнтеролог">
+                    <div class="doctor-slide" data-specialty=" наш Гастроэнтеролог">
                         <div class="doctor-card">
-                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-photo-container">
+                                <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                                <button class="more-info-btn" onclick="openModal('Антонович Антон Антонов', 'Гастроэнтеролог', '12 лет', 'Специализируется на диагностике и лечении заболеваний ЖКТ. Проводит гастроскопию, колоноскопию, УЗИ органов брюшной полости.', 'Дополнительная информация: закончил МГМУ им. Сеченова, кандидат медицинских наук, автор 15 научных публикаций. Владеет современными методами эндоскопической диагностики.')">
+                                    Больше информации
+                                </button>
+                            </div>
                             <div class="doctor-info">
                                 <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
                                 <div class="doctor-specialty">Гастроэнтеролог</div>
@@ -334,7 +339,7 @@
                     </div>
 
                     <!-- Гастроэнтеролог 2 -->
-                    <div class="doctor-slide" data-specialty="Гастроэнтеролог">
+                    <div class="doctor-slide" data-specialty=" наш Гастроэнтеролог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -350,7 +355,7 @@
                     </div>
 
                     <!-- Гинеколог 1 -->
-                    <div class="doctor-slide" data-specialty="Гинеколог">
+                    <div class="doctor-slide" data-specialty=" наш Гинеколог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -366,7 +371,7 @@
                     </div>
 
                     <!-- Гинеколог 2 -->
-                    <div class="doctor-slide" data-specialty="Гинеколог">
+                    <div class="doctor-slide" data-specialty=" наш Гинеколог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -382,7 +387,7 @@
                     </div>
 
                     <!-- Дерматолог 1 -->
-                    <div class="doctor-slide" data-specialty="Дерматолог">
+                    <div class="doctor-slide" data-specialty=" наш Дерматолог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -398,7 +403,7 @@
                     </div>
 
                     <!-- Дерматолог 2 -->
-                    <div class="doctor-slide" data-specialty="Дерматолог">
+                    <div class="doctor-slide" data-specialty=" наш Дерматолог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -414,7 +419,7 @@
                     </div>
 
                     <!-- Кардиолог 1 -->
-                    <div class="doctor-slide" data-specialty="Кардиолог">
+                    <div class="doctor-slide" data-specialty=" наш Кардиолог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -430,7 +435,7 @@
                     </div>
 
                     <!-- Кардиолог 2 -->
-                    <div class="doctor-slide" data-specialty="Кардиолог">
+                    <div class="doctor-slide" data-specialty=" наш Кардиолог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -446,7 +451,7 @@
                     </div>
 
                     <!-- КТГ 1 -->
-                    <div class="doctor-slide" data-specialty="КТГ">
+                    <div class="doctor-slide" data-specialty=" наш Кардиотокограф">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -462,7 +467,7 @@
                     </div>
 
                     <!-- КТГ 2 -->
-                    <div class="doctor-slide" data-specialty="КТГ">
+                    <div class="doctor-slide" data-specialty=" наш Кардиотокограф">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -478,7 +483,7 @@
                     </div>
 
                     <!-- ЛОР 1 -->
-                    <div class="doctor-slide" data-specialty="ЛОР">
+                    <div class="doctor-slide" data-specialty=" наш ЛОР">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -494,7 +499,7 @@
                     </div>
 
                     <!-- ЛОР 2 -->
-                    <div class="doctor-slide" data-specialty="ЛОР">
+                    <div class="doctor-slide" data-specialty=" наш ЛОР">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -510,7 +515,7 @@
                     </div>
 
                     <!-- Невролог 1 -->
-                    <div class="doctor-slide" data-specialty="Невролог">
+                    <div class="doctor-slide" data-specialty=" наш Невролог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -526,7 +531,7 @@
                     </div>
 
                     <!-- Невролог 2 -->
-                    <div class="doctor-slide" data-specialty="Невролог">
+                    <div class="doctor-slide" data-specialty=" наш Невролог">
                         <div class="doctor-card">
                             <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
                             <div class="doctor-info">
@@ -541,6 +546,275 @@
                         </div>
                     </div>
 
+                    <!-- онколог 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Онколог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Онколог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике злокачественных опухолей.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- онколог 2 -->
+                    <div class="doctor-slide" data-specialty=" наш Онколог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Онколог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике злокачественных опухолей.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- офтальмолог 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Офтальмолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Офтальмолог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний глаз, а также на подборе средств коррекции зрения.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Офтальмолог 2 -->
+                    <div class="doctor-slide" data-specialty=" наш Офтальмолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Офтальмолог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний глаз, а также на подборе средств коррекции зрения.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Педиатр 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Педиатр">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Педиатр</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний у детей от рождения до подросткового возраста.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Педиатр 2 -->
+                    <div class="doctor-slide" data-specialty=" наш Педиатр">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Педиатр</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний у детей от рождения до подросткового возраста.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Терапевт 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Терапевт">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Терапевт</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний практически всех органов и систем.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Терапевт 2 -->
+                    <div class="doctor-slide" data-specialty=" наш Терапевт">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Терапевт</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний практически всех органов и систем.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Травмотолог 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Травмотолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Травмотолог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике и лечении травматических повреждений опорно-двигательной системы.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Травмотолог 2 -->
+                    <div class="doctor-slide" data-specialty=" наш Травмотолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Травмотолог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике и лечении травматических повреждений опорно-двигательной системы.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- УЗИ-специалист 1 -->
+                    <div class="doctor-slide" data-specialty=" наш УЗИ-специалист">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">УЗИ-специалист</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на обследовании внутренних органов и тканей пациента с помощью ультразвуковых волн.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--УЗИ-специалист 2 -->
+                    <div class="doctor-slide" data-specialty="наш УЗИ-специалист">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">УЗИ-специалист</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на обследовании внутренних органов и тканей пациента с помощью ультразвуковых волн.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Уролог 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Уролог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Уролог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний мочевыделительной системы и мужской репродуктивной системы.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Уролог 2 -->
+                    <div class="doctor-slide" data-specialty="наш Уролог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Уролог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике заболеваний мочевыделительной системы и мужской репродуктивной системы.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Хирург 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Хирург">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Хирург</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике различных заболеваний, требующих хирургического вмешательства.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Хирург 2 -->
+                    <div class="doctor-slide" data-specialty="наш Хирург">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Хирург</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, лечении и профилактике различных заболеваний, требующих хирургического вмешательства.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Эндокринолог 1 -->
+                    <div class="doctor-slide" data-specialty=" наш Эндокринолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Эндокринолог</div>
+                                <div class="doctor-experience">Стаж работы: 15 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, профилактике и лечении патологий эндокринной системы.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Эндокринолог 2 -->
+                    <div class="doctor-slide" data-specialty="наш Эндокринолог">
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/250x300" alt="Антонов А.А." class="doctor-photo">
+                            <div class="doctor-info">
+                                <h3 class="doctor-fullname">Антонович Антон Антонов</h3>
+                                <div class="doctor-specialty">Эндокринолог</div>
+                                <div class="doctor-experience">Стаж работы: 10 лет</div>
+                                <div class="doctor-bio">
+                                    Специализируется на диагностике, профилактике и лечении патологий эндокринной системы.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Остальные врачи (по аналогии) -->
                 </div>
 
@@ -572,40 +846,50 @@
         document.querySelector('.appointment-btn').addEventListener('click', function() {
             alert('Функция записи на прием будет реализована позже');
         });
+        <!-- Модальное окно -->
+<div id="doctorModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2 class="modal-title" id="modalDoctorName"></h2>
+        <div class="modal-specialty" id="modalDoctorSpecialty"></div>
+        <div class="modal-experience" id="modalDoctorExperience"></div>
+        <div class="modal-bio" id="modalDoctorBio"></div>
+        <div class="modal-details" id="modalDoctorDetails"></div>
+    </div>
+</div>
+      // Логика карусели врачей
+let currentSlide = 0;
+const slides = document.querySelectorAll('.doctor-slide');
+const track = document.getElementById('carousel-track');
+const specialtyTitle = document.getElementById('current-specialty');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
 
-        // Логика карусели врачей
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.doctor-slide');
-        const track = document.getElementById('carousel-track');
-        const specialtyTitle = document.getElementById('current-specialty');
-        const prevButton = document.querySelector('.carousel-prev');
-        const nextButton = document.querySelector('.carousel-next');
+function updateCarousel() {
+    // Обновляем позицию карусели
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-        function updateCarousel() {
-            // Обновляем позицию карусели
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // Обновляем название специальности
+    if (slides[currentSlide]) {
+        specialtyTitle.textContent = slides[currentSlide].dataset.specialty;
+    }
+}
 
-            // Обновляем название специальности
-            if (slides[currentSlide]) {
-                specialtyTitle.textContent = slides[currentSlide].dataset.specialty;
-            }
+function moveSlide(direction) {
+    currentSlide += direction;
+    
+    // Зацикливание карусели
+    if (currentSlide >= slides.length) {
+        currentSlide = 0; // Переход к первому слайду после последнего
+    } else if (currentSlide < 0) {
+        currentSlide = slides.length - 1; // Переход к последнему слайду перед первым
+    }
+    
+    updateCarousel();
+}
 
-            // Обновляем состояние кнопок
-            prevButton.style.display = currentSlide === 0 ? 'none' : 'flex';
-            nextButton.style.display = currentSlide === slides.length - 1 ? 'none' : 'flex';
-        }
-
-        function moveSlide(direction) {
-            const newSlide = currentSlide + direction;
-
-            if (newSlide >= 0 && newSlide < slides.length) {
-                currentSlide = newSlide;
-                updateCarousel();
-            }
-        }
-
-        // Инициализация карусели
-        updateCarousel();
+// Инициализация карусели
+updateCarousel();
     </script>
 </body>
 </html>
